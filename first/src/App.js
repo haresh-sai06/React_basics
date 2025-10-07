@@ -9,6 +9,8 @@ import ClassClick from './components/state/ClassClick';
 import FunctionClick from './components/state/FunctionClick';
 import ErrorBoundary from './components/error_boundary/ErrorBoundary';
 import Hero from './components/error_boundary/Hero';
+import LifecycleA from './components/error_boundary/LifecycleA';
+import LifecycleB from './components/error_boundary/LifecycleB';
 
 function App() {
   return (
@@ -27,13 +29,14 @@ function App() {
       <HoverCounter />
       <User name={(IsLoggedIn) => IsLoggedIn ? "Haresh" : "Varsha"} />
       <ParentComponent /> */}
-      <ClassClick />
+      {/* <ClassClick />
       <FunctionClick />
       <ErrorBoundary>
         <Hero heroName="Batman" />
         <Hero heroName="Superman" />]
         <Hero heroName="Joker" />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+      <LifecycleB />
     </div>
   );
 }
