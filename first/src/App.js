@@ -11,6 +11,12 @@ import ErrorBoundary from './components/error_boundary/ErrorBoundary';
 import Hero from './components/error_boundary/Hero';
 import LifecycleA from './components/error_boundary/LifecycleA';
 import LifecycleB from './components/error_boundary/LifecycleB';
+import { UserProvider } from './components/context/UserContext';
+import ComponentC from './components/context/ComponentC';
+import FocusInput from './components/ref/FocusInput';
+import RefsDemo from './components/ref/RefsDemo';
+import FRParentInput from './components/ref/FRParentInput';
+import ClickCounter2 from './components/ref/ClickCounter';
 
 function App() {
   return (
@@ -36,7 +42,14 @@ function App() {
         <Hero heroName="Superman" />]
         <Hero heroName="Joker" />
       </ErrorBoundary> */}
-      <LifecycleB />
+      {/* <LifecycleB /> */}
+      <UserProvider value="Haresh">
+        <ComponentC />
+      </UserProvider>
+      <FocusInput /> 
+      <RefsDemo />
+      <FRParentInput />
+      <ClickCounter2 name="Haresh"/>
     </div>
   );
 }
