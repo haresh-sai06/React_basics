@@ -17,8 +17,20 @@ import FocusInput from './components/ref/FocusInput';
 import RefsDemo from './components/ref/RefsDemo';
 import FRParentInput from './components/ref/FRParentInput';
 import ClickCounter2 from './components/ref/ClickCounter';
+import { Navbar } from './components/routing/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './components/routing/Home';
+import { About } from './components/routing/About';
+import StudentList from './components/basics/StudentList';
 
 function App() {
+  const students = [
+    {id:1, name: 'Haresh', marks: 49},
+    {id:2, name: 'Varsha', marks: 19},
+    {id:3, name: 'Ankita', marks: 29},
+    {id:4, name: 'Amit', marks: 79},
+    {id:5, name: 'Sumit', marks: 59},
+  ]
   return (
     <div className="App">
       {/* <Message />
@@ -43,13 +55,22 @@ function App() {
         <Hero heroName="Joker" />
       </ErrorBoundary> */}
       {/* <LifecycleB /> */}
-      <UserProvider value="Haresh">
+      {/* <UserProvider value="Haresh">
         <ComponentC />
       </UserProvider>
       <FocusInput /> 
       <RefsDemo />
       <FRParentInput />
-      <ClickCounter2 name="Haresh"/>
+      <ClickCounter2 name="Haresh"/> */}
+      {/* <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+      </Routes>
+      </> */}
+      <h1>Student Directory</h1>
+      <StudentList students={students} />
     </div>
   );
 }
