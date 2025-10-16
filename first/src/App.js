@@ -22,6 +22,9 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './components/routing/Home';
 import { About } from './components/routing/About';
 import StudentList from './components/basics/StudentList';
+import Form from './components/forms/Form';
+import List from './components/basics/List';
+import Counter from './components/state/Counter';
 
 function App() {
   const students = [
@@ -31,6 +34,11 @@ function App() {
     {id:4, name: 'Amit', marks: 79},
     {id:5, name: 'Sumit', marks: 59},
   ]
+  const sampleTodos = [
+    { text: 'Learn React', completed: true },
+    { text: 'Practice Lists', completed: false },
+    { text: 'Build App', completed: false }
+  ];
   return (
     <div className="App">
       {/* <Message />
@@ -42,11 +50,11 @@ function App() {
       </Greet>
       <Greet name="Diana">
         <i>Hello World!</i>
-      </Greet>
-      <ClickCounter />
-      <HoverCounter />
-      <User name={(IsLoggedIn) => IsLoggedIn ? "Haresh" : "Varsha"} />
-      <ParentComponent /> */}
+      </Greet>*/}
+      {/* <ClickCounter /> */}
+      {/* <HoverCounter />
+      <User name={(IsLoggedIn) => IsLoggedIn ? "Haresh" : "Varsha"} /> */}
+      {/* <ParentComponent />  */}
       {/* <ClassClick />
       <FunctionClick />
       <ErrorBoundary>
@@ -69,8 +77,11 @@ function App() {
         <Route path="/about" element={<About/>} />
       </Routes>
       </> */}
-      <h1>Student Directory</h1>
-      <StudentList students={students} />
+      {/* <h1>Student Directory</h1>
+      <StudentList students={students} /> */}
+      {/* <Form /> */}
+      {/* <List todos={sampleTodos} showOnlyPending={true}/> */}
+      <Counter />
     </div>
   );
 }
