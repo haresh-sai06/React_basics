@@ -25,6 +25,8 @@ import StudentList from './components/basics/StudentList';
 import Form from './components/forms/Form';
 import List from './components/basics/List';
 import Counter from './components/state/Counter';
+import ControlledForm from './components/basics/ControlledForm';
+import UncontrolledForm from './components/basics/UncontrolledForm';
 
 function App() {
   const students = [
@@ -81,7 +83,11 @@ function App() {
       <StudentList students={students} /> */}
       {/* <Form /> */}
       {/* <List todos={sampleTodos} showOnlyPending={true}/> */}
-      <Counter />
+      {/* <Counter />
+       */}
+      {/* <ControlledForm />
+       */}
+       <UncontrolledForm />
     </div>
   );
 }
