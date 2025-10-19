@@ -27,6 +27,11 @@ import List from './components/basics/List';
 import Counter from './components/state/Counter';
 import ControlledForm from './components/basics/ControlledForm';
 import UncontrolledForm from './components/basics/UncontrolledForm';
+import LoginRegisterForm from './components/basics/LoginRegisterForm';
+import LifeCycleMethods from './components/basics/LifeCycleMethods';
+import FunctionVersion from './components/basics/UseEffect';
+import TimerApp from './components/basics/TimerApp';
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
   const students = [
@@ -41,6 +46,8 @@ function App() {
     { text: 'Practice Lists', completed: false },
     { text: 'Build App', completed: false }
   ];
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
   return (
     <div className="App">
       {/* <Message />
@@ -87,7 +94,15 @@ function App() {
        */}
       {/* <ControlledForm />
        */}
-       <UncontrolledForm />
+       {/* <UncontrolledForm /> */}
+       {/* <LoginRegisterForm /> */}
+       {/* <LifeCycleMethods /> */}
+       {/* <FunctionVersion /> */}
+       <TimerApp />
+       <h2>Count App</h2>
+       <h2>{count}</h2>
+       <button onClick={()=> dispatch({type:"INCREMENT"})}>+</button>
+       <button onClick={()=> dispatch({type: "DECREMENT"})}>-</button>
     </div>
   );
 }
