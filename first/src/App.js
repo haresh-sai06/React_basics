@@ -32,6 +32,7 @@ import LifeCycleMethods from './components/basics/LifeCycleMethods';
 import FunctionVersion from './components/basics/UseEffect';
 import TimerApp from './components/basics/TimerApp';
 import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, reset } from './components/modern_redux/counterSlice';
 
 function App() {
   const students = [
@@ -46,7 +47,7 @@ function App() {
     { text: 'Practice Lists', completed: false },
     { text: 'Build App', completed: false }
   ];
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   return (
     <div className="App">
@@ -101,8 +102,9 @@ function App() {
        <TimerApp />
        <h2>Count App</h2>
        <h2>{count}</h2>
-       <button onClick={()=> dispatch({type:"INCREMENT"})}>+</button>
-       <button onClick={()=> dispatch({type: "DECREMENT"})}>-</button>
+       <button onClick={()=> dispatch(increment())}>+</button>
+       <button onClick={()=> dispatch(decrement())}>-</button>
+       <button onClick={()=> dispatch(reset())}>RESET</button>
     </div>
   );
 }
